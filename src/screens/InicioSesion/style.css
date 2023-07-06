@@ -1,4 +1,4 @@
-.inicio-sesion {
+.inicio-sesion-inicio {
   height: 100vh;
   width: 100vw;
   background-color: #032843;
@@ -7,7 +7,7 @@
   color: #fff;
 }
 
-.div-derecha {
+.div-derecha-inicio {
   width: 50%;
   height: 100%;
   background-color: #518c6e;
@@ -18,7 +18,7 @@
   gap: 1.5rem;
 }
 
-.overlap {
+.overlap-inicio {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -26,7 +26,7 @@
   margin-top: 2rem;
 }
 
-.overlap img {
+.overlap-inicio img {
   width: 15rem;
 }
 
@@ -100,14 +100,26 @@
   font-family: "Inter-Regular", Helvetica;
 }
 
-.cont-btn{
+.cont-btn  {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
 
-.btn-Ingresar {
+
+.cont-btn-inicio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.link a{
+  text-decoration: none;
+}
+
+.btn-Ingresar-inicio {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,13 +134,13 @@
   font-size: 1rem;
 }
 
-.btn-Ingresar:hover {
+.btn-Ingresar-inicio:hover {
   background: #204766;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.div-crear-cuenta{
+.div-crear-cuenta-i {
   display: flex;
   justify-content: center;
   align-items: center;

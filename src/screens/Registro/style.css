@@ -1,4 +1,4 @@
-.inicio-sesion {
+.inicio-sesion-r {
   height: 100vh;
   width: 100vw;
   background-color: #032843;
@@ -7,7 +7,7 @@
   color: #fff;
 }
 
-.div-derecha {
+.div-derecha-r {
   width: 50%;
   height: 100%;
   background-color: #518c6e;
@@ -18,35 +18,35 @@
   gap: 1.5rem;
 }
 
-.overlap {
+.overlap-r {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
 }
 
-.overlap img {
+.overlap-r img {
   width: 15rem;
 }
 
-.overlap .text-bienbenido {
+.overlap-r .text-bienbenido-r {
   font-size: 3rem;
   margin-top: -1rem;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
 }
 
-.inputs {
+.inputs-r {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.div-user-name {
+.div-user-name-r {
   width: 35rem;
 }
 
-.div-user-name p {
+.div-user-name-r p {
   margin-bottom: 0.2rem;
   padding: 0;
   background-color: transparent;
@@ -54,7 +54,7 @@
   font-family: "Inter-Bold", Helvetica;
 }
 
-.div-user-name input {
+.div-user-name-r input {
   color: #fff;
   width: 95%;
   height: 3rem;
@@ -66,11 +66,11 @@
   font-family: "Inter-Regular", Helvetica;
 }
 
-.div-correo {
+.div-correo-r {
   width: 35rem;
 }
 
-.div-correo p {
+.div-correo-r p {
   margin-bottom: 0.2rem;
   padding: 0;
   background-color: transparent;
@@ -78,7 +78,7 @@
   font-family: "Inter-Bold", Helvetica;
 }
 
-.div-correo input {
+.div-correo-r input {
   color: #fff;
   width: 95%;
   height: 3rem;
@@ -90,11 +90,11 @@
   font-family: "Inter-Regular", Helvetica;
 }
 
-.div-contrasena {
+.div-contrasena-r {
   width: 35rem;
 }
 
-.div-contrasena p {
+.div-contrasena-r p {
   margin-bottom: 0.2rem;
   padding: 0;
   background-color: transparent;
@@ -102,7 +102,7 @@
   font-family: "Inter-Bold", Helvetica;
 }
 
-.div-contrasena input {
+.div-contrasena-r input {
   color: #fff;
   width: 95%;
   height: 3rem;
@@ -115,14 +115,14 @@
 }
 
 
-.cont-btn{
+.cont-btn-r{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
 
-.btn-Ingresar {
+.btn-Ingresar-r {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -138,13 +138,13 @@
   font-size: 1rem;
 }
 
-.btn-Ingresar:hover {
+.btn-Ingresar-r:hover {
   background: #204766;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.div-crear-cuenta{
+.div-crear-cuenta-r{
   display: flex;
   justify-content: center;
   align-items: center;

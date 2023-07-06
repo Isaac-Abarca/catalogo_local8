@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../../assets/img/logo.svg";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 export const InicioSesion = () => {
@@ -13,18 +14,13 @@ export const InicioSesion = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(body);
-  };
-
   return (
-    <div className="container">
-      <div className="inicio-sesion">
-        <div className="div-izquierda"></div>
-        <div className="div-derecha">
+    <div className="">
+      <div className="inicio-sesion-inicio">
+        <div className="div-izquierda-d"></div>
+        <div className="div-derecha-inicio">
           <div className="form-sesion">
-            <div className="overlap">
+            <div className="overlap-inicio">
               <img className="logo" alt="Logo local 8" src={Logo} />
               <h1 className="text-bienbenido">Bienvenido</h1>
             </div>
@@ -50,20 +46,27 @@ export const InicioSesion = () => {
                   onChange={inputChange}
                   name="password"
                 />
-                <a className="olvido-contasena">¿Olvidastes tu contraseña?</a>
+                <Link to="RecuperarContrasena">
+                  <a className="olvido-contasena">¿Olvidastes tu contraseña?</a>
+                </Link>
               </div>
-              <div className="cont-btn">
-                <input
-                  className="btn-Ingresar"
-                  type="button"
-                  value="Iniciar sesión"
-                  onClick={handleSubmit}
-                />
-              </div>
-              <div className="div-crear-cuenta">
+
+              <Link className="link" to="/Home">
+                <div className="cont-btn-inicio">
+                  <input
+                    className="btn-Ingresar-inicio"
+                    type="button"
+                    value="Ingresar"
+                  />
+                </div>
+              </Link>
+
+              <div className="div-crear-cuenta-i">
                 <p className="todav-a-no-tienes">
                   <span className="span">¿Todavía no tienes una cuenta? </span>
-                  <span className="text-wrapper-4">Cree una ahora</span>
+                  <Link to="/Registro">
+                    <span className="text-wrapper-4">Cree una ahora</span>
+                  </Link>
                 </p>
               </div>
             </div>
