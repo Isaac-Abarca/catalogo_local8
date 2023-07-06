@@ -1,13 +1,13 @@
-.inicio-sesion-inicio {
+.inicio-sesion {
   height: 100vh;
   width: 100vw;
   background-color: #032843;
   display: flex;
-  justify-content: end;
+  justify-content: start;
   color: #fff;
 }
 
-.div-derecha-inicio {
+.div-derecha {
   width: 50%;
   height: 100%;
   background-color: #518c6e;
@@ -18,15 +18,15 @@
   gap: 1.5rem;
 }
 
-.overlap-inicio {
+.overlap {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
-.overlap-inicio img {
+.overlap img {
   width: 15rem;
 }
 
@@ -41,7 +41,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+}
+
+.div-user-name {
+  width: 35rem;
+}
+
+.div-user-name p {
+  margin-bottom: 0.2rem;
+  padding: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  font-family: "Inter-Bold", Helvetica;
+}
+
+.div-user-name input {
+  color: #fff;
+  width: 95%;
+  height: 3rem;
+  background-color: #032843;
+  border: none;
+  border-radius: 0.2rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+  font-family: "Inter-Regular", Helvetica;
 }
 
 .div-correo {
@@ -92,34 +115,16 @@
   font-family: "Inter-Regular", Helvetica;
 }
 
-.div-contrasena .olvido-contasena {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  font-family: "Inter-Regular", Helvetica;
-}
 
-.cont-btn  {
+.cont-btn{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
 
-
-.cont-btn-inicio{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.link a{
-  text-decoration: none;
-}
-
-.btn-Ingresar-inicio {
+.btn-Ingresar {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,13 +139,13 @@
   font-size: 1rem;
 }
 
-.btn-Ingresar-inicio:hover {
+.btn-Ingresar:hover {
   background: #204766;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.div-crear-cuenta-i {
+.div-crear-cuenta{
   display: flex;
   justify-content: center;
   align-items: center;
