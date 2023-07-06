@@ -1,7 +1,23 @@
+import { useState } from "react";
 import Logo from "../../assets/img/logo.svg";
 import "./style.css";
 
 export const InicioSesion = () => {
+  const [body, setBody] = useState({ username: "", password: "" });
+
+  const inputChange = ({ target }) => {
+    const { name, value } = target;
+    setBody({
+      ...body,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(body);
+  };
+
   return (
     <div className="container">
       <div className="inicio-sesion">
@@ -14,11 +30,14 @@ export const InicioSesion = () => {
             </div>
             <div className="inputs">
               <div className="div-correo">
-                <p className="text-correo">Correo electrónico</p>
+                <p className="text-correo">Nombre usuario</p>
                 <input
                   type="text"
                   className="text-wrapper-2"
-                  placeholder=" Ingresa tu correo electrónico"
+                  placeholder=" Ingresa tu nombre de usuario"
+                  value={body.name}
+                  onChange={inputChange}
+                  name="username"
                 />
               </div>
               <div className="div-contrasena">
@@ -26,7 +45,10 @@ export const InicioSesion = () => {
                 <input
                   type="text"
                   className="text-wrapper-2"
-                  placeholder=" Ingresa tu correo contraseña"
+                  placeholder=" Ingresa tu contraseña"
+                  value={body.password}
+                  onChange={inputChange}
+                  name="password"
                 />
                 <a className="olvido-contasena">¿Olvidastes tu contraseña?</a>
               </div>
@@ -35,6 +57,7 @@ export const InicioSesion = () => {
                   className="btn-Ingresar"
                   type="button"
                   value="Iniciar sesión"
+                  onClick={handleSubmit}
                 />
               </div>
               <div className="div-crear-cuenta">

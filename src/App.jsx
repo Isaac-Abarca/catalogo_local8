@@ -1,11 +1,11 @@
 // Autor: Isaac Abarca Camacho
 import "./App.css";
-import { RecuperarContrasena } from "./screens/RecuperarContrasena";
+import { InicioSesion } from "./screens/InicioSesion";
 
 function App() {
   return (
     <>
-      <RecuperarContrasena />
+      <InicioSesion />
     </>
   );
 }
