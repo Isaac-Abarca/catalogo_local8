@@ -1,0 +1,150 @@
+.inicio-sesion {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.inicio-sesion .div {
+  background-color: #ffffff;
+  border: 1px none;
+  height: 1080px;
+  position: relative;
+  width: 1920px;
+}
+
+.inicio-sesion .frame {
+  background-color: #032843;
+  height: 1080px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1064px;
+}
+
+.inicio-sesion .form-sesion {
+  background-color: #1f595b;
+  height: 1080px;
+  left: 1064px;
+  position: absolute;
+  top: 0;
+  width: 856px;
+}
+
+.inicio-sesion .overlap {
+  height: 329px;
+  left: 166px;
+  position: absolute;
+  top: 11px;
+  width: 523px;
+}
+
+.inicio-sesion .text-wrapper {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 96px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 213px;
+}
+
+.inicio-sesion .diseo-sin-ttulo {
+  height: 255px;
+  left: 39px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 445px;
+}
+
+.inicio-sesion .input-2 {
+  height: 122px;
+  left: 93px;
+  position: absolute;
+  top: 418px;
+  width: 670px;
+}
+
+.inicio-sesion .div-wrapper {
+  background-color: #032843bf;
+  border-radius: 6px;
+  height: 91px;
+  left: 0;
+  position: absolute;
+  top: 31px;
+  width: 670px;
+}
+
+.inicio-sesion .text-wrapper-2 {
+  color: #ffffff80;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  height: 18px;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 36px;
+  white-space: nowrap;
+}
+
+.inicio-sesion .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  height: 24px;
+  left: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.inicio-sesion .input-instance {
+  left: 93px !important;
+  position: absolute !important;
+  top: 601px !important;
+}
+
+.inicio-sesion .design-component-instance-node {
+  background-color: #032843bf !important;
+}
+
+.inicio-sesion .bottom-instance {
+  background: linear-gradient(180deg, rgb(3, 40, 67) 0%, rgb(3, 40, 67) 100%) !important;
+  left: 184px !important;
+  position: absolute !important;
+  top: 821px !important;
+}
+
+.inicio-sesion .todav-a-no-tienes {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 800;
+  left: 227px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 975px;
+  width: 402px;
+}
+
+.inicio-sesion .span {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.inicio-sesion .text-wrapper-4 {
+  font-size: 20px;
+}
