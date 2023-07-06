@@ -1,7 +1,7 @@
 import Logo from "../../assets/img/logo.svg";
 import "./style.css";
 
-export const InicioSesion = () => {
+export const RecuperarContrasena = () => {
   return (
     <div className="container">
       <div className="inicio-sesion">
@@ -10,8 +10,16 @@ export const InicioSesion = () => {
           <div className="form-sesion">
             <div className="overlap">
               <img className="logo" alt="Logo local 8" src={Logo} />
-              <h1 className="text-bienbenido">Bienvenido</h1>
+              <h1 className="text-bienbenido">Recuperar Contraseña</h1>
             </div>
+            <div className="div-user-name">
+                <p className="text-password">Nombre de usuario</p>
+                <input
+                  type="text"
+                  className="text-wrapper-2"
+                  placeholder=" Ingresa el nombre de usuarioa"
+                />
+              </div>
             <div className="inputs">
               <div className="div-correo">
                 <p className="text-correo">Correo electrónico</p>
@@ -21,26 +29,17 @@ export const InicioSesion = () => {
                   placeholder=" Ingresa tu correo electrónico"
                 />
               </div>
-              <div className="div-contrasena">
-                <p className="text-password">Contraseña</p>
-                <input
-                  type="text"
-                  className="text-wrapper-2"
-                  placeholder=" Ingresa tu correo contraseña"
-                />
-                <a className="olvido-contasena">¿Olvidastes tu contraseña?</a>
-              </div>
               <div className="cont-btn">
                 <input
                   className="btn-Ingresar"
                   type="button"
-                  value="Iniciar sesión"
+                  value="Mandar correo"
                 />
               </div>
               <div className="div-crear-cuenta">
                 <p className="todav-a-no-tienes">
-                  <span className="span">¿Todavía no tienes una cuenta? </span>
-                  <span className="text-wrapper-4">Cree una ahora</span>
+                  <span className="span">¿Ya tienes cuenta? </span>
+                  <span className="text-wrapper-4">Inicia sesión</span>
                 </p>
               </div>
             </div>
