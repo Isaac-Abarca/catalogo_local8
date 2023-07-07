@@ -1,0 +1,1 @@
+export {Cargaimg} from './Cargaimg';
