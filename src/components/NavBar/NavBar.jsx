@@ -12,26 +12,28 @@ export function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand ><img className="logo" src={Logo} alt="" /></Navbar.Brand>
+        <Navbar.Brand>
+          <img className="logo" src={Logo} alt="" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link >Perfumes</Nav.Link>
-            <Nav.Link >Comestibles</Nav.Link>
-            <Nav.Link >Cosmeticos</Nav.Link>
-            <Nav.Link >Herramientas</Nav.Link>
-            <Nav.Link >Relogeria</Nav.Link>
-            <Nav.Link >Desodorantes</Nav.Link>
-            <Nav.Link >Bolsos</Nav.Link>
+          <Nav className="me-auto Links2">
+            <Nav.Link className="Links">Perfumes</Nav.Link>
+            <Nav.Link className="Links">Comestibles</Nav.Link>
+            <Nav.Link className="Links">Cosmeticos</Nav.Link>
+            <Nav.Link className="Links">Herramientas</Nav.Link>
+            <Nav.Link className="Links">Relojeria</Nav.Link>
+            <Nav.Link className="Links">Desodorantes</Nav.Link>
+            <Nav.Link className="Links">Bolsos</Nav.Link>
           </Nav>
           <Nav>
-          <Nav.Link eventKey={1} >
+            <Nav.Link eventKey={1}>
               <img className="icono" src={Cargar} alt="carro compra" />
             </Nav.Link>
-            <Nav.Link eventKey={2} >
+            <Nav.Link eventKey={2}>
               <img className="icono" src={Carrito} alt="carro compra" />
             </Nav.Link>
-            <Nav.Link eventKey={2} >
+            <Nav.Link eventKey={2}>
               <img className="icono" src={CargarImg} alt="carro compra" />
             </Nav.Link>
           </Nav>

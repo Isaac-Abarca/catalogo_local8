@@ -3,8 +3,10 @@
     height: 3rem;
 }
 
+
 .logo{
-    width: 9rem;
+    margin-left: -2rem;
+    width: 10rem;
     height: 5rem;
 }
 
@@ -12,3 +14,17 @@
     width: 3rem;
     height: 3rem;
 }
+
+
+.Links2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 1;
+}
+
