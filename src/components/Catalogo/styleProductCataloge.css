@@ -16,8 +16,8 @@
 
 .product-list {
   flex: 3;
-  overflow-y: auto; /* Añade desplazamiento vertical */
-  max-height: 89vh; /* Establece una altura máxima */
+  overflow-y: auto; 
+  max-height: 89vh; 
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -38,6 +38,7 @@
   .product-card {
     width: 45%;
   }
+  
 }
 
 @media (max-width: 576px) {
@@ -89,6 +90,12 @@
   padding-top: 1.5rem;
   font-size: 1.1rem;
   font-style: italic;
+}
+
+@media (max-width: 1600px) {
+  .filter-categories {
+    height: 42vh; 
+  }
 }
 
 /* Estilos search  */

@@ -2,12 +2,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 import "./style.css";
 
 import Logo from "../../assets/img/logo.svg";
 import Carrito from "../../assets/img/carro-compra.png";
 import Cargar from "../../assets/img/cargar-datos.png";
-import CargarImg from "../../assets/img/cargar-img.png";
 
 export function NavBar({ onCategorySelect }) {
   const handleCategorySelect = (category) => {
@@ -27,7 +28,7 @@ export function NavBar({ onCategorySelect }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto Links2">
-          <Nav.Link
+            <Nav.Link
               className="Links"
               onClick={() => handleCategorySelect("")}
             >
@@ -76,16 +77,13 @@ export function NavBar({ onCategorySelect }) {
               Bolsos
             </Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link eventKey={1}>
+          <Nav className="link-data">
+            <Link to="/CargarBD">
               <img className="icono" src={Cargar} alt="carro compra" />
-            </Nav.Link>
-            <Nav.Link eventKey={2}>
+            </Link>
+            <Link to="/Carrito">
               <img className="icono" src={Carrito} alt="carro compra" />
-            </Nav.Link>
-            <Nav.Link eventKey={2}>
-              <img className="icono" src={CargarImg} alt="carro compra" />
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
