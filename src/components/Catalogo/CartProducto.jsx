@@ -3,14 +3,23 @@ import { Cargaimg } from "../CargaImg";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import defaultImage from "../../assets/img/producto-sin-imagen.png"; 
+import defaultImage from "../../assets/img/producto-sin-imagen.png";
 import Modal from "react-bootstrap/Modal";
+import { AddToCartIcon, RemoveFromCartIcon } from "../CarritoCompra/Icons.jsx";
 
 import "./stylecard.css";
 
-const CardProducto = ({ cod, descripcion, quantity, image }) => {
+const CardProducto = ({
+  cod,
+  descripcion,
+  quantity,
+  image,
+  setUploadProducts,
+}) => {
   const [show, setShow] = useState(false);
   const [imageURL, setImageURL] = useState(null);
+  const [isProductInCart, setisProductInCart] = useState(false);
+  
 
   useEffect(() => {
     if (image && image.data.length > 0) {
@@ -20,14 +29,26 @@ const CardProducto = ({ cod, descripcion, quantity, image }) => {
     }
   }, [image]);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setUploadProducts(true);
+  };
   const handleShow = () => setShow(true);
 
   const handleUploadComplete = (uploadedImageURL) => {
     setImageURL(uploadedImageURL);
     handleClose();
+    setUploadProducts(true);
   };
 
+  const botonStyle = {
+    backgroundColor: isProductInCart ? 'green'  : '#0d6efd' ,
+    color: 'white',
+  };
+  const changeState = () => {
+    setisProductInCart(!isProductInCart)
+  }
+  
   return (
     <Card className="" style={{ width: "18rem" }}>
       {imageURL ? (
@@ -44,12 +65,14 @@ const CardProducto = ({ cod, descripcion, quantity, image }) => {
         </Card.Text>
       </Card.Body>
       <div className="btn-action">
-        <Button variant="primary">Add card</Button>
+        <Button style={botonStyle} onClick={changeState}>
+        {isProductInCart ? <RemoveFromCartIcon/> : <AddToCartIcon /> }
+        </Button>
         <div>
           <Button onClick={handleShow}>Add img</Button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Elige la imagen a subir</Modal.Title>
+              <Modal.Title>Selecciona o arrastra la imagen a subir</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Cargaimg cod={cod} onUploadComplete={handleUploadComplete} />
@@ -70,10 +93,8 @@ CardProducto.propTypes = {
   cod: PropTypes.string.isRequired,
   descripcion: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
-  image: PropTypes.object
-  
-  ,
+  image: PropTypes.object,
+  setUploadProducts: PropTypes.func.isRequired,
 };
 
 export default CardProducto;
-

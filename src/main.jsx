@@ -5,10 +5,9 @@ import { RecuperarContrasena } from "./screens/RecuperarContrasena";
 import { Home } from "./screens/Home";
 import { Registro } from "./screens/Registro";
 
-
 import "./index.css";
 // Importing the Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
