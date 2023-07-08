@@ -2,19 +2,19 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Cart } from "/src/components/CarritoCompra/Cart.jsx";
+import { ModalCSV } from "/src/components/CargarCSV";
 
 import "./style.css";
-
 import Logo from "../../assets/img/logo.svg";
-import Carrito from "../../assets/img/carro-compra.png";
-import Cargar from "../../assets/img/cargar-datos.png";
 
 export function NavBar({ onCategorySelect }) {
   const handleCategorySelect = (category) => {
     onCategorySelect(category);
     console.log(category);
   };
+
+  
   return (
     <Navbar
       collapseOnSelect
@@ -78,12 +78,12 @@ export function NavBar({ onCategorySelect }) {
             </Nav.Link>
           </Nav>
           <Nav className="link-data">
-            <Link to="/CargarBD">
-              <img className="icono" src={Cargar} alt="carro compra" />
-            </Link>
-            <Link to="/Carrito">
-              <img className="icono" src={Carrito} alt="carro compra" />
-            </Link>
+            <div  >
+              <ModalCSV/>
+            </div>
+            <div >
+              <Cart/>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

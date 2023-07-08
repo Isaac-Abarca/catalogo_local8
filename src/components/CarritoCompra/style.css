@@ -1,0 +1,53 @@
+.cart {
+  background: #1f595b;
+  display: none;
+  padding: 16px;
+  position: fixed;
+  right: 0px;
+  top: 6.5rem;
+  width: 25rem;
+}
+
+.cart img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 20rem;
+}
+
+.cart li {
+  border-bottom: 1px solid #444;
+  padding-bottom: 16px;
+}
+
+.cart footer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart footer button {
+  padding: 8px;
+}
+
+.cart-button {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  scale: 1.1;
+}
+
+.cart-button ~ input:checked ~ .cart {
+  height: 100%;
+  display: block;
+}
+
+

@@ -9,13 +9,19 @@ export function ProductCataloge({ selectedCategory }) {
   const [maxPrice, setMaxPrice] = useState("");
   const [searchText, setSearchText] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [uploadProducts, setUploadProducts] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:9000/api")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.log(error));
-  }, []);
+    if (uploadProducts) {
+      fetch("http://localhost:9000/api")
+        .then((response) => response.json())
+        .then((data) => {
+          setProducts(data);
+          setUploadProducts(false); // Restablecer el estado a su valor inicial
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [uploadProducts]);
 
   useEffect(() => {
     const filterProducts = () => {
@@ -55,14 +61,14 @@ export function ProductCataloge({ selectedCategory }) {
       return (
         <div className="default-background-5 ">
           {filteredProducts.map((product) => (
-            <ProductCard key={product.id} {...product} />
+            <ProductCard key={product.id} {...product}  setUploadProducts={setUploadProducts}/>
           ))}
         </div>
       );
     }
 
     return filteredProducts.map((product) => (
-      <ProductCard key={product.id} {...product} />
+      <ProductCard key={product.id} {...product} setUploadProducts={setUploadProducts} />
     ));
   };
 
