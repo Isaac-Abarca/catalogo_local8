@@ -69,7 +69,7 @@ export function Cargaimg(cod) {
                 className="btn btn-primary px-3 py-2"
                 type="button"
               >
-                Cargar
+                Limpiar
               </button>
             </div>
             {saveChanges ? (
