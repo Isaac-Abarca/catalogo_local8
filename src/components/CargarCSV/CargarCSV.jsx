@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Papa from "papaparse";
 
 import "./styles.css";
 
 export function CargarCSV() {
   const [file, setFile] = useState(null);
-  const [saveChanges, setSaveChanges] = useState(false);
+  const [saveChanges, setSaveChanges] = useState("");
 
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
@@ -13,34 +14,63 @@ export function CargarCSV() {
   const sendHandlerLimpiar = () => {
     document.getElementById("fileinput").value = null;
     setFile(null);
-  }
+    setSaveChanges(false);
+  };
+
   const sendHandler = () => {
     if (!file) {
-      alert("you must upload file");
+      alert("Debes subir un archivo");
       return;
     }
-
-    const formdata = new FormData();
-    formdata.append("image", file);
-
-    fetch(`http://localhost:9000/api/post/`, {
-      method: "POST",
-      body: formdata,
-    })
-      .then((res) => res.text())
-      .then((res) => {
-        console.log(res);
-        setSaveChanges(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        setSaveChanges(false);
+  
+    const fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      const csvData = e.target.result;
+      Papa.parse(csvData, {
+        header: true,
+        complete: function (results) {
+          let jsonArray = results.data;
+          console.log(jsonArray);
+  
+          // Filtrar y eliminar elementos sin información
+          jsonArray = jsonArray.filter((item) => {
+            return item.cod && item.linea && item.descripcion && item.price && item.quantity;
+          });
+  
+          // Modificar la opción 'price' del JSON
+          jsonArray = jsonArray.map((item) => {
+            return {
+              ...item,
+              price: item.price.replace(/,/g, "").replace(".00", "")
+            };
+          });
+  
+          fetch("http://localhost:9000/api/productos", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(jsonArray)
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              setSaveChanges('Todo salio bien');
+            })
+            .catch((error) => {
+              //console.error(error);
+              setSaveChanges('Ocurrió un error al cargar el archivo' + error);
+            });
+        }
       });
-
+    };
+  
+    fileReader.readAsText(file);
+  
     document.getElementById("fileinput").value = null;
     setFile(null);
   };
-
+  
   return (
     <>
       <div className="">
@@ -70,9 +100,7 @@ export function CargarCSV() {
                 Limpiar
               </button>
             </div>
-            {saveChanges ? (
-              <p>Los cambios se realizaron correctamente.</p>
-            ):<p></p>}
+            <p>{saveChanges}</p>
           </div>
         </div>
       </div>

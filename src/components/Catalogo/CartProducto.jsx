@@ -10,8 +10,10 @@ import { AddToCartIcon, RemoveFromCartIcon } from "../CarritoCompra/Icons.jsx";
 import "./stylecard.css";
 
 const CardProducto = ({
+  id,
   cod,
   descripcion,
+  price,
   quantity,
   image,
   setUploadProducts,
@@ -61,7 +63,9 @@ const CardProducto = ({
         <Card.Text>
           Codigo: {cod}
           <br />
-          Precio: {quantity}
+          Precio: {price}
+          <br />
+          Cantidad: {quantity}
         </Card.Text>
       </Card.Body>
       <div className="btn-action">
@@ -72,10 +76,10 @@ const CardProducto = ({
           <Button onClick={handleShow}>Add img</Button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Selecciona o arrastra la imagen a subir</Modal.Title>
+              <Modal.Title>Selecciona o arrastra  imagen a subir</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Cargaimg cod={cod} onUploadComplete={handleUploadComplete} />
+              <Cargaimg id={id} onUploadComplete={handleUploadComplete} />
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
@@ -93,8 +97,10 @@ CardProducto.propTypes = {
   cod: PropTypes.string.isRequired,
   descripcion: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   image: PropTypes.object,
   setUploadProducts: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default CardProducto;

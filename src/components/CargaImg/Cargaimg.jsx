@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import "./styles.css";
 
-export function Cargaimg(cod) {
+export function Cargaimg(id) {
   const [file, setFile] = useState(null);
-  const [saveChanges, setSaveChanges] = useState(false);
+  const [saveChanges, setSaveChanges] = useState("");
 
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
@@ -25,18 +25,18 @@ export function Cargaimg(cod) {
     const formdata = new FormData();
     formdata.append("image", file);
 
-    fetch(`http://localhost:9000/api/images/put/${cod.cod}`, {
+    fetch(`http://localhost:9000/api/images/put/${id.id}`, {
       method: "PUT",
       body: formdata,
     })
       .then((res) => res.text())
       .then((res) => {
         console.log(res);
-        setSaveChanges(true);
+        setSaveChanges(res);
       })
       .catch((err) => {
         console.log(err);
-        setSaveChanges(false);
+        setSaveChanges(err);
       });
 
     document.getElementById("fileinput").value = null;
@@ -72,9 +72,7 @@ export function Cargaimg(cod) {
                 Limpiar
               </button>
             </div>
-            {saveChanges ? (
-              <p>Los cambios se realizaron correctamente.</p>
-            ):<p></p>}
+            <p>{saveChanges}</p>
           </div>
         </div>
       </div>
@@ -83,5 +81,5 @@ export function Cargaimg(cod) {
 }
 
 Cargaimg.prototype = {
-  cod: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
